@@ -1,0 +1,100 @@
+<div class="container jumbotron">
+  <p>Зарегистрироваться в системе:</p>
+  <form action="/registration" method="post">
+    <div class="form-group">
+      <label>Username:</label>
+      <input class="form-control" type="text" name="login" />
+    </div>
+    <div class="form-group">
+      <label>Email:</label>
+      <input class="form-control" type="text" name="email" />
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input class="form-control" type="password" name="password" />
+    </div>
+    <div>
+      <input class="btn btn-secondary" type="submit" value="Sign Up" />
+    </div>
+  </form>
+</div>
+
+<div class="container jumbotron">
+  <p>Войти в систему:</p>
+  <form action="/login" method="post">
+    <div class="form-group">
+      <label>Username:</label>
+      <input class="form-control" type="text" name="login" />
+    </div>
+    <div class="form-group">
+      <label>Password:</label>
+      <input class="form-control" type="text" name="password" />
+    </div>
+    <div class="form-group">
+      <input class="btn btn-secondary" type="submit" value="Log In" />
+    </div>
+  </form>
+</div>
+
+<div class="container jumbotron">
+  <a class="nav-link active" href="logout">Выйти из системы</a>
+</div>
+
+<div class="container jumbotron">
+  <p>Загрузить большую картинку:</p>
+  <a class="nav-link active" href="/1">Получить большую картинку!</a>
+</div>
+
+<div class='container jumbotron'>
+
+  <button class="btn btn-secondary" id='button'>Кнопка генерации статьи</button>
+
+  <div class="row">
+    <div class="col-12">
+      <p>Введите текст:</p>
+      <textarea class="form-control" id="text_id" rows="5" cols="35" name="text"></textarea>
+      {{!-- <input type="text" id="text_id" > --}}
+      <p>Загрузить файл (будет дополнен в статью):</p>
+      <div id='test'>
+        <input type="file" id="myfileinput" multiple>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container jumbotron">
+  <div class="jumbotron">
+    {{#if foo}}
+    <button id='special'>Особая кнопка для особых прав!</button>
+    {{else}}
+    <p>Говорят тут кнопки не видно</p>
+    {{/if}}
+  </div>
+</div>
+
+<div class='container jumbotron'>
+  {{#each data as |item|}}
+  <div class="container article">
+    <div class="row">
+      {{#each item as |item1| }}
+      <div class="col-md-3">
+        <img src={{item1.img_url}} alt="..." class="img-thumbnail img">
+      </div>
+      {{/each}}
+    </div>
+    <p>{{item.0.text}}</p>
+    <button class="btn btn-secondary button" data-article="{{@key}}">Удалить статью номер: <p>{{@key}}</p></button>
+  </div>
+  {{/each}}
+</div>
+
+
+</div>
+
+
+<div id="app"></div>
+
+<script src='public/js/custom/custom.js'></script>
+
+{{!-- <script src="static/js/react_components/form.js"></script> --}}

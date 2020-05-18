@@ -1,0 +1,68 @@
+.test{
+  background-color: rgb(210, 233, 227);
+}
+
+.dlloader{
+    border: 1px solid black;
+    height: 400px;
+    overflow: scroll;
+}
+
+.dlloader_bloc{
+    margin: 3px;
+    border: 1px solid black;
+    height: 100px;
+}
+
+
+body{text-align:center;}
+
+form{display:block;border:1px solid black;padding:20px;}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+
+section{
+    padding:60px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    color: #4C4C4C;
+    word-spacing: 5px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom:30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.ion-minus{
+    padding:0px 10px;
+}
+
+#blog{
+	background-color:#f6f6f6;
+}
+
+#blog .blog.column a{
+	color:#5db4c0;
+	text-decoration:none;
+}
+
+#blog img:hover {
+	opacity:0.8; 
+}
+
+
+.article {
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+.img{
+    width: 150px;
+    height: 200px;
+}
+
+.button{
+    margin: 2px;
+}

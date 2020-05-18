@@ -1,0 +1,56 @@
+Асинхронный обработчик
+<br>
+
+<div id='root_req_to_API'></div>
+<button id='test'>Кнопка для теста всякой ерунды</button>
+<button id='toKLADR'>Запрос к кладр</button>
+<script src="static/js/react_components/reqToAPI.js"></script>
+<div id='toKLADR_result'>Результат</div>
+
+<a href="/test-test"> Скачать файл </a>
+
+<script>
+
+
+  let elem = document.getElementById('test');
+
+  elem.addEventListener('click', () => {
+    fetch('/test-test')
+      .then((response) => {
+        return response.text()
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch(() => { })
+  });
+
+</script>
+
+<script>
+
+  (() => {
+
+    let elem = document.getElementById('toKLADR');
+
+    elem.addEventListener('click', () => {
+      fetch('/toKLADR')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          //отрисовать все эти тыщщщщи - с пагинацией по странично
+          let cont = document.getElementById('toKLADR_result');
+          for(let i = 0; i < data.length; i++){
+            let p = document.createElement('p');
+            p.innerHTML = `ID:${data[i].id}, Name:${data[i].name}, ZIP:${data[i].zip}`;
+            cont.append(p);
+          }
+        })
+        .catch(() => { })
+    });
+  })()
+
+
+</script>
